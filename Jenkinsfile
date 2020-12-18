@@ -14,8 +14,9 @@ pipeline {
 		}
 		stage('run protractor code'){
 			steps {
+				sh "WORKDIR /app"
 				sh "ls"
-				sh "cd protractorui"
+				sh "COPY package.json /app/package.json"
 				sh "pwd"
 				sh "npm install"
 				sh "npm start"
