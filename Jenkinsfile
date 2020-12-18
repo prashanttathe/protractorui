@@ -14,8 +14,9 @@ pipeline {
 		}
 		stage('run protractor code'){
 			steps {
-				sh "cd ./protractorui"
-				sh "cd /var/lib/jenkins/workspace/FEI_PT_uiAuto/screenshots"
+				
+				sh "curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -sudo apt-get install -y nodejs"
+				sh "node -v"
 				sh "ls"
 				sh "pwd"
 				sh "npm install"
