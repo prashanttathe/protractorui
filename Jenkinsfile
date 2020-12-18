@@ -15,7 +15,7 @@ pipeline {
 		stage('run protractor code'){
 			steps {
 				sh "cd ./protractorui"
-				sh "cd screenshots"
+				sh "cd /var/lib/jenkins/workspace/FEI_PT_uiAuto/screenshots"
 				sh "ls"
 				sh "pwd"
 				sh "npm install"
