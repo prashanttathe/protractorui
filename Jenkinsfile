@@ -14,7 +14,8 @@ pipeline {
 		}
 		stage('run protractor code'){
 			steps {
-				sh "cd /protractorui"
+				sh "ls"
+				sh "cd protractorui"
 				sh "npm install"
 				sh "npm start"
 				sh "npm test"				
