@@ -4,13 +4,12 @@ pipeline {
     		def GIT_REPO_NAME = "prashanttathe"
     		def DEPLOY_ENV = "dev"
 	}
-    	agent any
-		agent {
-    docker {
-        image 'tntaksreg.azurecr.io'
-        node '12.2.0'        
-			}
-			  }
+    	agent {
+    		docker {
+        	image 'node:12.2.0'
+        	args '-p 3000:3000'   
+	     }
+		      }
     	stages {
 		stage('Code Checkout') {
 			steps {
