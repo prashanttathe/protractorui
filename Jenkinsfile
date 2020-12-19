@@ -16,7 +16,7 @@ pipeline {
 			steps {
 				
 				
-				sh "node -v"
+				sh "echo "NODE_NAME = ${env.NODE_NAME}""
 				sh "ls"
 				sh "pwd"
 				sh "npm install"
