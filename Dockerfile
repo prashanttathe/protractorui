@@ -17,12 +17,12 @@ ENV REST_PORT=$REST_PORT
 # install and cache app dependencies
 COPY package.json /app/package.json
 RUN npm install -g protractor
+RUN rm -r protractorui
 COPY . /app
 #RUN ps -aux
 #RUN pkill chrome
 RUN pwd
 RUN ls -l
-RUN rm -r protractorui
 RUN chmod -R 777 ./node_modules/webdriver-manager
 RUN ls -l
 RUN npm start
