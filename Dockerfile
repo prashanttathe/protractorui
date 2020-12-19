@@ -10,7 +10,7 @@ RUN ls -l
 #RUN apt-get update && apt-get install -yq google-chrome-stable
 
 # set working directory
-#WORKDIR /app
+WORKDIR /app
 
 # add `/app/node_modules/.bin` to $PATH
 #ENV PATH /app/node_modules/.bin:$PATH
@@ -18,8 +18,8 @@ RUN ls -l
 #ENV REST_PORT=$REST_PORT
 
 # install and cache app dependencies
-#COPY package.json /app/package.json
-#RUN npm install -g protractor
+COPY package.json /app/package.json
+RUN npm install -g protractor
 #RUN pwd
 #RUN df -h
 #COPY . /app
