@@ -16,8 +16,8 @@ ENV REST_PORT=$REST_PORT
 
 # install and cache app dependencies
 COPY package.json /app/package.json
-COPY . /app
 RUN npm install
+COPY . /app
 RUN ps -aux
 #RUN pkill chrome
 RUN npm start
