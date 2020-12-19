@@ -20,9 +20,10 @@ RUN npm install
 COPY . /app
 #RUN ps -aux
 #RUN pkill chrome
-RUN npm start
-RUN npm test
 RUN pwd
 RUN ls -l
+RUN npm start
+RUN npm test
+
 
 # add app
