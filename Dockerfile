@@ -23,7 +23,7 @@ RUN npm install -g protractor
 RUN pwd
 RUN df -h
 #COPY . /app
-RUN ls -l
+RUN ls -lh
 #RUN rm -r protractorui
 #RUN ps -aux
 #RUN pkill chrome
