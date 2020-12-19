@@ -5,6 +5,12 @@ pipeline {
     		def DEPLOY_ENV = "dev"
 	}
     	agent any
+		agent {
+    docker {
+        image 'tntaksreg.azurecr.io'
+        node '12.2.0'        
+			}
+			  }
     	stages {
 		stage('Code Checkout') {
 			steps {
@@ -13,10 +19,8 @@ pipeline {
 			}
 		}
 		stage('run protractor code'){
-			steps {
-				
-				
-				sh "echo "NODE_NAME = ${env.NODE_NAME}""
+			
+			steps {			
 				sh "ls"
 				sh "pwd"
 				sh "npm install"
