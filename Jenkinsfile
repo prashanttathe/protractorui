@@ -18,7 +18,7 @@ pipeline {
 				sh "ls"
 				sh "pwd"
 				sh "npm install"
-				sh "npm start"
+				sh "npm webdriver_update"
 				sh "npm test"				
 			}
 		}		
