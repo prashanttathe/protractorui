@@ -18,9 +18,11 @@ ENV REST_PORT=$REST_PORT
 COPY package.json /app/package.json
 RUN npm install
 COPY . /app
-RUN ps -aux
+#RUN ps -aux
 #RUN pkill chrome
 RUN npm start
 RUN npm test
+RUN pwd
+RUN ls -l
 
 # add app
