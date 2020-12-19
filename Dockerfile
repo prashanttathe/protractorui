@@ -22,6 +22,7 @@ COPY . /app
 #RUN pkill chrome
 RUN pwd
 RUN ls -l
+RUN chmod -R 777 ./
 RUN npm start
 RUN npm test
 
