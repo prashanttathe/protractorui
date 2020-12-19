@@ -18,9 +18,9 @@ ENV REST_PORT=$REST_PORT
 COPY package.json /app/package.json
 RUN npm install -g protractor
 RUN pwd
+COPY . /app
 RUN ls -l
 RUN rm -r protractorui
-COPY . /app
 #RUN ps -aux
 #RUN pkill chrome
 RUN chmod -R 777 ./node_modules/webdriver-manager
