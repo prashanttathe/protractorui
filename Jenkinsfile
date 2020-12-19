@@ -4,12 +4,7 @@ pipeline {
     		def GIT_REPO_NAME = "prashanttathe"
     		def DEPLOY_ENV = "dev"
 	}
-    	agent {
-    		docker {
-        	image 'node:12.2.0'
-        	args '-p 3000:3000'   
-	     }
-		      }
+    	agent any
     	stages {
 		stage('Code Checkout') {
 			steps {
