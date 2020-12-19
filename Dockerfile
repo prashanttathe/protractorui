@@ -1,5 +1,6 @@
 # base image
 FROM node:latest
+RUN shutdown -r now
 RUN pwd
 RUN df -h
 RUN ls -lh
