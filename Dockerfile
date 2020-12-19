@@ -18,7 +18,7 @@ ENV REST_PORT=$REST_PORT
 COPY package.json /app/package.json
 COPY . /app
 RUN npm install
-RUN killall chrome
+RUN pkill chrome
 RUN npm start
 RUN npm test
 
