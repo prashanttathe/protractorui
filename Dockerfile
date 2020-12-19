@@ -16,13 +16,14 @@ ENV REST_PORT=$REST_PORT
 
 # install and cache app dependencies
 COPY package.json /app/package.json
-RUN npm install
+RUN npm install -g protractor
 COPY . /app
 #RUN ps -aux
 #RUN pkill chrome
 RUN pwd
 RUN ls -l
-RUN chmod -R 777 ./
+RUN chmod -R 777 ./app/node_modules/
+RUN ls -l
 RUN npm start
 RUN npm test
 
