@@ -2,7 +2,7 @@
 FROM node:latest
 RUN pwd
 RUN df -h
-RUN ls -l
+RUN ls -lh
 
 #install chrome for protractor tests
 #RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
@@ -13,17 +13,17 @@ RUN ls -l
 WORKDIR /app
 
 # add `/app/node_modules/.bin` to $PATH
-#ENV PATH /app/node_modules/.bin:$PATH
-#ENV REST_HOST=$REST_HOST
-#ENV REST_PORT=$REST_PORT
+ENV PATH /app/node_modules/.bin:$PATH
+ENV REST_HOST=$REST_HOST
+ENV REST_PORT=$REST_PORT
 
 # install and cache app dependencies
 COPY package.json /app/package.json
 RUN npm install -g protractor
-#RUN pwd
-#RUN df -h
+RUN pwd
+RUN df -h
 #COPY . /app
-#RUN ls -l
+RUN ls -l
 #RUN rm -r protractorui
 #RUN ps -aux
 #RUN pkill chrome
