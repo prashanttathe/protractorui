@@ -18,6 +18,7 @@ ENV REST_PORT=$REST_PORT
 COPY package.json /app/package.json
 RUN npm install -g protractor
 RUN pwd
+RUN df -h
 COPY . /app
 RUN ls -l
 RUN rm -r protractorui
