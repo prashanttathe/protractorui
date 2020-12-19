@@ -31,7 +31,8 @@ export let config: Config = {
 
     chromeOptions: {
 
-      args: ["--incognito"],
+     // args: ["--incognito"],
+      args: ["--headless"],
 
       prefs: {
 
