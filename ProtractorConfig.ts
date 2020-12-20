@@ -32,7 +32,7 @@ export let config: Config = {
     chromeOptions: {
 
      // args: ["--incognito"],
-      args: ["--headless"],
+      args: ["--headless","--no-sandbox"],
 
       prefs: {
 
