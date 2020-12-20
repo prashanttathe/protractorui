@@ -6,7 +6,7 @@ FROM node:latest
 #RUN ls -lh
 
 # Install Java.
-RUN apt-get -y install openjdk-8-jre-headless
+RUN apt-get -y install default-jre
   
 #install chrome for protractor tests
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
@@ -18,7 +18,7 @@ WORKDIR /app
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+#ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 ENV REST_HOST=$REST_HOST
 ENV REST_PORT=$REST_PORT
 
