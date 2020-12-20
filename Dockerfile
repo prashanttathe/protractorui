@@ -50,8 +50,9 @@ RUN chmod -R 777 ./
 RUN webdriver-manager update
 RUN npm test
 
-WORKDIR /var
-RUN ls -lh
+#WORKDIR /var
+#RUN ls -lh
+COPY 2020-12-20.html /var/lib/jenkins/workspace/FEI_PetClinic_uiAutoXX/Reports/
 #RUN echo "Protractor report" | mail -s "Protractor Report Here" tathe.prashant@gmail.com -A 2020-12-20.html
 RUN pwd
 
