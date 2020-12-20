@@ -28,7 +28,7 @@ COPY . /app
 #RUN rm -r protractorui
 #RUN ps -aux
 #RUN pkill chrome
-RUN chmod -R 777 ./node_modules/webdriver*.*
+RUN chmod -R 777 ./node_modules/
 #RUN ls -l
 RUN npm start
 RUN npm test
