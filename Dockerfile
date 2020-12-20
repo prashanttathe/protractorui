@@ -39,14 +39,15 @@ RUN npm install -g protractor
 #RUN pwd
 #RUN df -h
 COPY . /app
-#RUN ls -lh
+RUN ls -lh
 #RUN rm -r protractorui
 #RUN ps -aux
 #RUN pkill chrome
 RUN chmod -R 777 ./node_modules/.bin/webdriver-manager
 RUN java --version
 #RUN ls -l
-RUN CD ./node_modules/.bin/
+RUN cd ./node_modules/.bin/
+RUN ls -lh
 RUN webdriver-manager update
 RUN npm test
 
