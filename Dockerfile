@@ -42,7 +42,7 @@ RUN npm install -g protractor
 COPY . /app
 #RUN ls -lh
 #change permissions for webdriver-update
-#RUN chmod -R 777 ./
+RUN chmod -R 777 ./
 #RUN java --version
 #RUN ls -l
 RUN webdriver-manager update
