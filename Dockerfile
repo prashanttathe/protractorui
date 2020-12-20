@@ -1,4 +1,6 @@
 # base image
+FROM node:latest
+
 FROM debian:buster-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
