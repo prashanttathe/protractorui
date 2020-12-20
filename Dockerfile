@@ -5,8 +5,12 @@ FROM node:latest
 #RUN df -h
 #RUN ls -lh
 
-# Install Java.
-RUN apt-get -y install default-jre
+FROM openjdk:latest
+RUN apt-get install -y curl \
+  && curl -sL https://deb.nodesource.com/setup_9.x | bash - \
+  && apt-get install -y nodejs \
+  && curl -L https://www.npmjs.com/install.sh | sh
+RUN npm install -g grunt grunt-cli
   
 #install chrome for protractor tests
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
