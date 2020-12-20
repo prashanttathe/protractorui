@@ -32,6 +32,7 @@ ENV REST_HOST=$REST_HOST
 ENV REST_PORT=$REST_PORT
 
 # install and cache app dependencies
+RUN pwd
 COPY package.json /app/package.json
 RUN npm install -g protractor
 COPY . /app
@@ -43,5 +44,9 @@ RUN java --version
 RUN webdriver-manager update
 RUN npm test
 
+RUN pwd
+RUN ls -a ./Reports/
+WORKDIR ./Reports/
+RUN pwd
 
 # add app
