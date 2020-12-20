@@ -50,10 +50,9 @@ RUN chmod -R 777 ./
 RUN webdriver-manager update
 RUN npm test
 
-RUN pwd
-RUN ls -a ./Reports/
-WORKDIR ./Reports/
-RUN echo "Protractor report" | mail -s "Protractor Report Here" tathe.prashant@gmail.com -A 2020-12-20.html
+WORKDIR /home
+RUN ls -lh
+#RUN echo "Protractor report" | mail -s "Protractor Report Here" tathe.prashant@gmail.com -A 2020-12-20.html
 RUN pwd
 
 # add app
