@@ -17,6 +17,7 @@ RUN apt-get update && apt-get upgrade -y && \
     
 # We need wget to set up the PPA and xvfb to have a virtual screen and unzip to install the Chromedriver
 RUN apt-get install -y wget xvfb unzip
+RUN apt-get install -y mailutils
 
 #install chrome for protractor tests
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
@@ -50,7 +51,7 @@ RUN npm test
 RUN pwd
 RUN ls -a app/Reports/
 WORKDIR ./Reports/
-COPY app/Reports/ .
+RUN echo "Protractor report" | mail -s "Protractor Report Here" prashant.tathe@atos.net -A 2020-12-20.html
 RUN pwd
 
 # add app
