@@ -5,12 +5,9 @@ FROM node:latest
 #RUN df -h
 #RUN ls -lh
 
-RUN apt-get install -y curl \
-  && curl -sL https://deb.nodesource.com/setup_9.x | bash - \
-  && apt-get install -y nodejs \
-  && curl -L https://www.npmjs.com/install.sh | sh
-RUN npm install -g grunt grunt-cli
-  
+RUN apk add --no-cache curl tar bash procps
+CMD [""]
+
 #install chrome for protractor tests
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
