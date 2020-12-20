@@ -1,5 +1,5 @@
 # base image
-FROM node:latest
+#FROM node:latest
 from debian:buster-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
