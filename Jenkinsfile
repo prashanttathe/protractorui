@@ -6,11 +6,19 @@ pipeline {
 	}
     	agent { dockerfile true }
 	stages {
-		stage('Initialize') {
+		stage('test copying files') {
 			steps {
-				echo 'Placeholder.'
-			}
-		}
+				//echo 'Placeholder.'
+				checkout scm
+        			def customImage = docker.build("docker-image:${env.BUILD_ID}", "-f ./apache/Dockerfile .")
+				customImage.inside('-v $WORKSPACE:/output -u root') {            			
+            										sh """
+            										ls /output
+            										touch /tmp/test.html && ls /tmp
+            										cp /tmp/test.html /output
+            										"""
+											}
+				}
 		
     	}
 	post { 
