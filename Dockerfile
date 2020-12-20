@@ -29,6 +29,7 @@ COPY . /app
 #RUN ps -aux
 #RUN pkill chrome
 RUN chmod -R 777 ./node_modules/
+RUN java --version
 #RUN ls -l
 RUN npm start
 RUN npm test
