@@ -48,8 +48,9 @@ RUN webdriver-manager update
 RUN npm test
 
 RUN pwd
-RUN ls -a ./Reports/
+RUN ls -a app/Reports/
 WORKDIR ./Reports/
+COPY app/Reports/ .
 RUN pwd
 
 # add app
