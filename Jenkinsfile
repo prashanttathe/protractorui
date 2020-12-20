@@ -6,10 +6,13 @@ pipeline {
 	}
     	agent { dockerfile true }
 	stages {
-		stage('Message') {
-			echo "Completed"
-    				}
+		stage('Initialize') {
+			steps {
+				echo 'Placeholder.'
+			}
 		}
+		
+    	}
 	post { 
 		success { 
 		    echo "Your Test execution is done and reports at - /protractorui/reports/2020-12-18.html"
