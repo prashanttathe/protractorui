@@ -1,5 +1,4 @@
 # base image
-#FROM node:latest
 from debian:buster-slim
 USER root
 ENV DEBIAN_FRONTEND=noninteractive
@@ -29,20 +28,15 @@ WORKDIR /app
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
-#ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 ENV REST_HOST=$REST_HOST
 ENV REST_PORT=$REST_PORT
 
 # install and cache app dependencies
 COPY package.json /app/package.json
 RUN npm install -g protractor
-#RUN pwd
-#RUN df -h
 COPY . /app
 RUN ls -lh
-#RUN rm -r protractorui
-#RUN ps -aux
-#RUN pkill chrome
+#change permissions for webdriver-update
 RUN chmod -R 777 ./
 RUN java --version
 #RUN ls -l
