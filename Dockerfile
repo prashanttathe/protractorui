@@ -1,7 +1,6 @@
 # base image
 from debian:buster-slim
 USER root
-Label protractor
 ENV DEBIAN_FRONTEND=noninteractive
 RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
 RUN apt-get update && \
