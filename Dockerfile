@@ -46,7 +46,7 @@ COPY . /app
 RUN chmod -R 777 ./node_modules/
 RUN java --version
 #RUN ls -l
-RUN npm prestart
+RUN npm run prestart
 RUN npm test
 
 
