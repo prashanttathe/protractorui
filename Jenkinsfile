@@ -18,9 +18,10 @@ pipeline {
             										cp /tmp/test.html /output
             										"""
 											}
-				}
+				}	
+					}
 		
-    	}
+    		}
 	post { 
 		success { 
 		    echo "Your Test execution is done and reports at - /protractorui/reports/2020-12-18.html"
