@@ -1,28 +1,18 @@
 # base image
 FROM node:latest
 
-# Install "software-properties-common" (for the "add-apt-repository")
-RUN apt-get update && apt-get install -y \
-    software-properties-common
+from debian:buster-slim
 
-# Add the "JAVA" ppa
-RUN add-apt-repository -y \
-    ppa:webupd8team/java
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Install OpenJDK-8
+RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
+
 RUN apt-get update && \
-    apt-get install -y openjdk-8-jdk && \
-    apt-get clean;
+apt-get install -y --no-install-recommends \
+        openjdk-11-jre
 
-# Fix certificate issues
-RUN apt-get update && \
-    apt-get install ca-certificates-java && \
-    apt-get clean && \
-    update-ca-certificates -f;
-
-# Setup JAVA_HOME -- useful for docker commandline
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
-RUN export JAVA_HOME
+# Prints installed java version, just for checking
+RUN java --version
 
 #install chrome for protractor tests
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
