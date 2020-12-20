@@ -33,17 +33,17 @@ ENV REST_HOST=$REST_HOST
 ENV REST_PORT=$REST_PORT
 
 # install and cache app dependencies
-RUN pwd
-RUN ls
+#RUN pwd
+#RUN ls
 COPY package.json /app/package.json
 RUN npm install -g protractor
-RUN pwd
-RUN ls
+#RUN pwd
+#RUN ls
 COPY . /app
-RUN ls -lh
+#RUN ls -lh
 #change permissions for webdriver-update
-RUN chmod -R 777 ./
-RUN java --version
+#RUN chmod -R 777 ./
+#RUN java --version
 #RUN ls -l
 RUN webdriver-manager update
 RUN npm test
@@ -51,7 +51,7 @@ RUN npm test
 RUN pwd
 RUN ls -a ./Reports/
 WORKDIR ./Reports/
-RUN echo "Protractor report" | mail -s "Protractor Report Here" prashant.tathe@atos.net -A ./Reports/2020-12-20.html
+RUN echo "Protractor report" | mail -s "Protractor Report Here" prashant.tathe@atos.net -A 2020-12-20.html
 RUN pwd
 
 # add app
