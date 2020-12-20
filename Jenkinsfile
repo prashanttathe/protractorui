@@ -12,12 +12,7 @@ pipeline {
 				sh "git clone https://github.com/${GIT_REPO_NAME}/${APP_NAME}.git"
 			}
 		}
-		stage('run protractor code'){
-			
-			steps {			
-				echo "Your Test execution is done and reports at - /protractorui/reports/2020-12-18.html"			
-			}
-		}		
+		
     	}
 	post { 
 		success { 
