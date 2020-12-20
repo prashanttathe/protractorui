@@ -46,7 +46,8 @@ COPY . /app
 RUN chmod -R 777 ./node_modules/.bin/webdriver-manager
 RUN java --version
 #RUN ls -l
-RUN ./node_modules/webdriver-manager update
+RUN CD ./node_modules/.bin/
+RUN webdriver-manager update
 RUN npm test
 
 
