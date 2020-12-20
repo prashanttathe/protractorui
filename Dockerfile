@@ -27,11 +27,6 @@ RUN echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/so
 RUN apt-get update -y
 RUN apt-get install -y google-chrome-stable
 
-# Set up Chromedriver Environment variables
-ENV CHROMEDRIVER_VERSION latest
-ENV CHROMEDRIVER_DIR /chromedriver
-RUN mkdir $CHROMEDRIVER_DIR
-
 # Download and install Chromedriver
 RUN wget -q --continue -P $CHROMEDRIVER_DIR "http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
 RUN unzip $CHROMEDRIVER_DIR/chromedriver* -d $CHROMEDRIVER_DIR
