@@ -17,7 +17,7 @@ RUN apt-get update && apt-get upgrade -y && \
     npm                       # note this one
     
 #install wget
-#RUN apt-get install wget
+RUN apt-get install wget
 
 #install chrome for protractor tests
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
