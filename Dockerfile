@@ -11,6 +11,11 @@ apt-get install -y --no-install-recommends \
 #Prints installed java version, just for checking
 RUN java --version
 
+#install npm
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y nodejs \
+    npm                       # note this one
+    
 #install wget
 #RUN apt-get install wget
 
