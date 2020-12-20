@@ -22,7 +22,8 @@ exports.config = {
     capabilities: {
         browserName: 'chrome',
         chromeOptions: {
-            args: ["--incognito"],
+            //args: ["--incognito"],
+            args: ["--headless"],
             prefs: {
                 download: {
                     prompt_for_download: false,
