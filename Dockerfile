@@ -5,7 +5,6 @@ FROM node:latest
 #RUN df -h
 #RUN ls -lh
 
-FROM openjdk:latest
 RUN apt-get install -y curl \
   && curl -sL https://deb.nodesource.com/setup_9.x | bash - \
   && apt-get install -y nodejs \
