@@ -51,8 +51,8 @@ RUN webdriver-manager update
 RUN npm test
 
 WORKDIR ./Reports
-#RUN ls -lh
-COPY 2020-12-20.html /var/lib/jenkins/workspace/FEI_PetClinic_uiAutoXX/Reports/
+RUN ls -lh
+COPY ./Reports/2020-12-20.html /var/lib/jenkins/workspace/FEI_PetClinic_uiAutoXX/Reports/
 #RUN echo "Protractor report" | mail -s "Protractor Report Here" tathe.prashant@gmail.com -A 2020-12-20.html
 RUN pwd
 
