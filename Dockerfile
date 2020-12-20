@@ -1,5 +1,5 @@
 # base image
-FROM node:latest
+FROM debian:stretch-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
