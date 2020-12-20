@@ -1,18 +1,21 @@
 # base image
 FROM node:latest
 
-from debian:buster-slim
+RUN pwd
+RUN df -h
+RUN ls -lh
+#from debian:buster-slim
 
-ENV DEBIAN_FRONTEND=noninteractive
-RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
-RUN apt-get update && \
-apt-get install -y --no-install-recommends \
-       openjdk-11-jre
+#ENV DEBIAN_FRONTEND=noninteractive
+#RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
+#RUN apt-get update && \
+#apt-get install -y --no-install-recommends \
+#       openjdk-11-jre
 #Prints installed java version, just for checking
-RUN java --version
+#RUN java --version
 
 # install wget
-RUN apt-get install wget
+#RUN apt-get install wget
 
 #install chrome for protractor tests
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
