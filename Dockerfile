@@ -52,7 +52,7 @@ RUN npm test
 
 WORKDIR ./Reports
 RUN ls -lh
-#RUN cat 2020-12-20.html
+RUN cat 2020-12-21.html
 #RUN echo "Protractor report" | mail -s "Protractor Report Here" tathe.prashant@gmail.com -A 2020-12-20.html
 RUN pwd
 
