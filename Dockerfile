@@ -1,39 +1,38 @@
-# base image
-#from debian:buster-slim
-FROM openjdk:12-debian
+# chromium > 76 is required. For now, this is only available in the 'edge' build
+FROM alpine:edge
+
 USER root
-#ENV DEBIAN_FRONTEND=noninteractive
-#RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
-RUN apk add
-RUN apt-get update && \
-apt-get install -y --no-install-recommends \
-       default-jdk*
-       #openjdk-11-jre
- 
- #RUN apt-get update
- #RUN apt-get install default-jdk*
- #RUN apt-get install java
-#Prints installed java version, just for checking
+
+RUN apk add openjdk11 
 RUN java --version
 
 #install npm
-RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y nodejs \
+RUN apk update && apt-get upgrade -y && \
+    apk add -y nodejs \
     npm                       # note this one
     
-# We need wget to set up the PPA and xvfb to have a virtual screen and unzip to install the Chromedriver
-RUN apt-get install -y wget xvfb unzip
-RUN apt-get install -y mailutils
+# Install chromium, some dependnecies, node and dumb-init
+RUN apk add --no-cache \
+      chromium nss freetype freetype-dev harfbuzz ca-certificates ttf-freefont \
+      nodejs npm \
+      dumb-init
 
-#install chrome for protractor tests
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-RUN apt-get update && apt-get install -yq google-chrome-stable
+# Add user so we don't need --no-sandbox.
+RUN addgroup -S chromium &&\
+    adduser -S -g chromium chromium &&\
+    mkdir /app &&\
+    chown -R chromium:chromium /app
 
-# set working directory
-RUN pwd
-RUN ls
+# Run everything after as non-privileged user.
+USER chromium
+
+# Set CHROME_BIN to avoid tweaking config files (e.g. karma.conf.js)
+ENV CHROME_BIN=/usr/bin/chromium-browser
+
 WORKDIR /app
+
+# dumb-init avoids having zombie Chrome processes
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
