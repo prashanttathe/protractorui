@@ -1,12 +1,16 @@
 # base image
-from debian:buster-slim
+#from debian:buster-slim
+FROM node:latest
 USER root
-ENV DEBIAN_FRONTEND=noninteractive
-RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
-RUN apt-get update && \
-apt-get install -y --no-install-recommends \
-       openjdk-11-jre
-           
+#ENV DEBIAN_FRONTEND=noninteractive
+#RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
+#RUN apt-get update && \
+#apt-get install -y --no-install-recommends \
+#       openjdk-11-jre
+ 
+ RUN apt-get update
+ RUN apt-get install default-jdk*
+ RUN apt-get install java
 #Prints installed java version, just for checking
 RUN java --version
 
