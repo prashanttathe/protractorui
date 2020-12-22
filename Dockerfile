@@ -46,7 +46,8 @@ ENV REST_PORT=$REST_PORT
 COPY package.json /app/package.json
 #Global npm dependencies
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
-ENV PATH=$PATH:/home/node/.npm-global/bin # optionally if you want to run npm global bin without specifying path
+#optionally if you want to run npm global bin without specifying path
+ENV PATH=$PATH:/home/node/.npm-global/bin
 RUN npm install -g protractor
 #RUN pwd
 #RUN ls
