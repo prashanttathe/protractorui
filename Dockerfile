@@ -60,6 +60,7 @@ COPY . /app
 #RUN ls -l
 RUN webdriver-manager update
 RUN chmod -R 777 /app/JSFiles
+RUN pwd
 WORKDIR /app/JSFiles
 RUN ls -l
 WORKDIR /app
