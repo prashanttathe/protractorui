@@ -60,7 +60,8 @@ COPY . /app
 #RUN ls -l
 RUN webdriver-manager update
 USER root
-RUN chmod -R 777 ./app
+RUN ls -l
+RUN chmod -R 777 /app
 RUN npm test
 WORKDIR ./Reports
 RUN ls -lh
