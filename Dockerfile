@@ -59,9 +59,10 @@ COPY . /app
 #RUN java --version
 #RUN ls -l
 RUN webdriver-manager update
-USER root
+RUN chmod -R 777 /app/JSFiles
+WORKDIR /app/JSFiles
 RUN ls -l
-RUN chmod -R 777 /app
+WORKDIR /app
 RUN npm test
 WORKDIR ./Reports
 RUN ls -lh
