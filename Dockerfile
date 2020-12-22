@@ -10,7 +10,7 @@ apt-get install -y --no-install-recommends \
  
  #RUN apt-get update
  #RUN apt-get install default-jdk*
- #RUN apt-get install java
+ RUN apt-get install java
 #Prints installed java version, just for checking
 RUN java --version
 
