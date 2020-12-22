@@ -4,7 +4,7 @@ FROM openjdk:12
 USER root
 #ENV DEBIAN_FRONTEND=noninteractive
 #RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
-
+RUN apk add
 RUN apt-get update && \
 apt-get install -y --no-install-recommends \
        default-jdk*
