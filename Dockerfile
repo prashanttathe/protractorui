@@ -59,7 +59,7 @@ RUN chmod -R 777 ./
 #RUN java --version
 #RUN ls -l
 RUN webdriver-manager update
-RUN chmod -R 777 /app/node_modules
+#RUN chmod -R 777 /app/node_modules
 RUN npm test
 WORKDIR ./Reports
 RUN ls -lh
