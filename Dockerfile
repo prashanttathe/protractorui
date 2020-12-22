@@ -59,8 +59,9 @@ COPY . /app
 #RUN java --version
 #RUN ls -l
 RUN webdriver-manager update
-USER node
+USER root
 RUN npm test
+RUN chmod -R 777 ./app
 WORKDIR ./Reports
 RUN ls -lh
 #RUN cat 2020-12-21.html
