@@ -25,7 +25,7 @@ RUN addgroup -S chromium &&\
     chown -R chromium:chromium /app
 
 # Run everything after as non-privileged user.
-USER chromium
+#USER chromium
 
 # Set CHROME_BIN to avoid tweaking config files (e.g. karma.conf.js)
 ENV CHROME_BIN=/usr/bin/chromium-browser
@@ -40,7 +40,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 ENV REST_HOST=$REST_HOST
 ENV REST_PORT=$REST_PORT
 
-User root
+#User root
 # install and cache app dependencies
 #RUN pwd
 #RUN ls
