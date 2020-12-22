@@ -60,8 +60,8 @@ COPY . /app
 #RUN ls -l
 RUN webdriver-manager update
 USER root
-RUN npm test
 RUN chmod -R 777 ./app
+RUN npm test
 WORKDIR ./Reports
 RUN ls -lh
 #RUN cat 2020-12-21.html
