@@ -1,19 +1,18 @@
 # base image
 #from debian:buster-slim
-FROM node:latest
+FROM openjdk:12
 USER root
 #ENV DEBIAN_FRONTEND=noninteractive
 #RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
-RUN apt-get install software-properties-common
-RUN add-apt-repository ppa:openjdk-r/ppa
+
 RUN apt-get update && \
 apt-get install -y --no-install-recommends \
-       #default-jdk*
-       openjdk-11-jre
+       default-jdk*
+       #openjdk-11-jre
  
  #RUN apt-get update
  #RUN apt-get install default-jdk*
- RUN apt-get install java
+ #RUN apt-get install java
 #Prints installed java version, just for checking
 RUN java --version
 
