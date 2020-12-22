@@ -44,6 +44,7 @@ ENV REST_PORT=$REST_PORT
 #RUN pwd
 #RUN ls
 COPY package.json /app/package.json
+RUN chmod -R 777 /usr/lib/node_modules/
 RUN npm install -g protractor
 #RUN pwd
 #RUN ls
