@@ -1,6 +1,6 @@
 # base image
 #from debian:buster-slim
-FROM openjdk:12
+FROM openjdk:12-debian
 USER root
 #ENV DEBIAN_FRONTEND=noninteractive
 #RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
