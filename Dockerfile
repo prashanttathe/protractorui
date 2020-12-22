@@ -40,6 +40,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 ENV REST_HOST=$REST_HOST
 ENV REST_PORT=$REST_PORT
 
+User root
 # install and cache app dependencies
 #RUN pwd
 #RUN ls
@@ -54,7 +55,7 @@ RUN npm install -g protractor
 COPY . /app
 #RUN ls -lh
 #change permissions for webdriver-update
-RUN chmod -R 777 ./
+#RUN chmod -R 777 ./
 #RUN java --version
 #RUN ls -l
 RUN webdriver-manager update
