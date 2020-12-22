@@ -49,7 +49,7 @@ COPY package.json /app/package.json
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 #optionally if you want to run npm global bin without specifying path
 ENV PATH=$PATH:/home/node/.npm-global/bin
-RUN npm install -g protractor
+RUN npm install -g
 #RUN pwd
 #RUN ls
 COPY . /app
