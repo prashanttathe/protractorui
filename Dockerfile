@@ -6,7 +6,7 @@ USER root
 #RUN mkdir -p /usr/share/man/man1 /usr/share/man/man2
 RUN apt-get update && \
 apt-get install -y --no-install-recommends \
-       openjdk-11-jre
+       default-jdk*
  
  #RUN apt-get update
  #RUN apt-get install default-jdk*
