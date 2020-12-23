@@ -3,7 +3,7 @@ pipeline{
 	stages{
 		stage("Build"){
 			steps {
-				sh 'chown -R node /usr/local/lib /usr/local/include /usr/local/share /usr/local/bin'
+				sh 'chown -R root /usr/local/lib /usr/local/include /usr/local/share /usr/local/bin'
 				sh 'npm install -g protractor'
 				sh 'npm install -g cucumber'
 				sh 'npm install protractor-beautiful-reporter'
