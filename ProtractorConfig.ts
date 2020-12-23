@@ -29,9 +29,8 @@ export let config: Config = {
   {
     browserName: 'firefox',
 
-    firefoxOptions: {
-
-     // args: ["--incognito"],
+    'moz:firefoxOptions': {
+      // args: ["--incognito"],
       args: ["--headless","no-sandbox"],
 
       prefs: {
