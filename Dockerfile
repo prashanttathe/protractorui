@@ -13,8 +13,8 @@ RUN java --version
 RUN apk add  --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/main/ nodejs=8.9.3-r1
     
 #RUN \
- #   add-pkg --repository http://dl-cdn.alpinelinux.org/alpine/edge/community
-RUN apk --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing firefox
+#add-pkg --repository http://dl-cdn.alpinelinux.org/alpine/edge/community
+RUN apk add --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing firefox
 	
 WORKDIR /app
 
