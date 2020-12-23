@@ -27,21 +27,11 @@ export let config: Config = {
 
   capabilities:
   {
-    browserName: 'firefox',
+     browserName: 'firefox',
 
-    'moz:firefoxOptions': {
-      // args: ["--incognito"],
-      args: ["--headless","no-sandbox"],
-
-      prefs: {
-
-        download: {
-          prompt_for_download: false,
-          directory_upgrade: true,
-          default_directory: './Download/'
-        }
-      }
-    }
+  'moz:firefoxOptions': {
+     args: [ "--headless" ]
+   }
   },
 
   specs: [
