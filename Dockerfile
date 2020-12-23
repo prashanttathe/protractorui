@@ -32,22 +32,22 @@ COPY package.json /app/package.json
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 #optionally if you want to run npm global bin without specifying path
 ENV PATH=$PATH:/home/node/.npm-global/bin
-RUN npm install -g
+#RUN npm install -g
 #RUN pwd
 #RUN ls
-COPY . /app
+#COPY . /app
 #RUN ls -lh
 #change permissions for webdriver-update
-RUN chmod -R 777 ./
+#RUN chmod -R 777 ./
 #RUN java --version
 #RUN ls -l
-RUN webdriver-manager update
+#RUN webdriver-manager update
 #RUN chmod -R 777 /app/node_modules
-RUN npm test
-WORKDIR ./Reports
-RUN ls -lh
-RUN cat 2020-12-23.html
+#RUN npm test
+#WORKDIR ./Reports
+#RUN ls -lh
+#RUN cat 2020-12-23.html
 #RUN echo "Protractor report" | mail -s "Protractor Report Here" tathe.prashant@gmail.com -A 2020-12-20.html
-RUN pwd
+#RUN pwd
 
 # add app
