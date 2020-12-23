@@ -4,7 +4,9 @@ pipeline{
 		stage("Build"){
 			steps {
 				sh 'pwd'
-				sh 'cd /var/lib/'				
+				sh 'cd /var/lib/'
+				sh 'ln -s /var/lib/ ~/var'
+				sh 'cd ~/var'
 				sh 'pwd'
 				sh 'ls -lh'				
 				sh 'npm install'
