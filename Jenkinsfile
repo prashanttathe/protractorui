@@ -9,7 +9,7 @@ pipeline {
 				sh 'pwd'
 				sh 'chmod -R 777 ./'
 				sh 'ls -lh'
-				sh 'npm install'
+				sh 'npm install -g protractor'
 				sh 'npm install cucumber'
 				sh 'npm install protractor-beautiful-reporter'
 				sh 'webdriver-manager status'
