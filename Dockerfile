@@ -12,28 +12,12 @@ RUN java --version
   #  npm                       # note this one
 RUN apk add  --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/main/ nodejs=8.9.3-r1
     
-# Install chromium, some dependnecies, node and dumb-init
-RUN apk add --no-cache \
-      chromium nss freetype freetype-dev harfbuzz ca-certificates ttf-freefont \
-      nodejs npm \
-      dumb-init
-
-# Add user so we don't need --no-sandbox.
-RUN addgroup -S chromium &&\
-    adduser -S -g chromium chromium &&\
-    mkdir /app &&\
-    chown -R chromium:chromium /app
-
-# Run everything after as non-privileged user.
-#USER chromium
-
-# Set CHROME_BIN to avoid tweaking config files (e.g. karma.conf.js)
-ENV CHROME_BIN=/usr/bin/chromium-browser
-
+RUN \
+    add-pkg --repository http://dl-cdn.alpinelinux.org/alpine/edge/community
+RUN apk update
+RUN apk add firefox-esr	
+	
 WORKDIR /app
-
-# dumb-init avoids having zombie Chrome processes
-ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
