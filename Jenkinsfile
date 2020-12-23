@@ -7,7 +7,7 @@ pipeline{
 				sh 'npm install -g cucumber'
 				sh 'npm install protractor-beautiful-reporter'
 				sh 'webdriver-manager update'
-				sh 'protractor conf.js --chromeDriver="$CHROME_DRIVER" --browser=chrome --capabilities.chromeOptions.args="headless" --capabilities.chromeOptions.args="no-sandbox"'
+				sh 'npm test'
 			}
 			
 		}
