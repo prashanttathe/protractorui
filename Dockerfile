@@ -39,7 +39,7 @@ ENV PATH=$PATH:/home/node/.npm-global/bin
 #COPY . /app
 #RUN ls -lh
 #change permissions for webdriver-update
-#RUN chmod -R 777 ./
+RUN chmod -R 777 /home/node
 #RUN java --version
 #RUN ls -l
 #RUN webdriver-manager update
