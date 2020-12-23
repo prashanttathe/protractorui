@@ -4,6 +4,7 @@ pipeline{
 		stage("Build"){
 			steps {
 				sh 'pwd'
+				sh 'chmod -R 777 ./'
 				sh 'ls -lh'				
 				sh 'npm install'
 				sh 'npm install cucumber'
