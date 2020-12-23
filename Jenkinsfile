@@ -12,8 +12,8 @@ pipeline {
 				sh 'npm install'
 				sh 'npm install cucumber'
 				sh 'npm install protractor-beautiful-reporter'
-				sh 'npm install -g webdriver-manager'
 				sh 'webdriver-manager status'
+				sh 'npm install webdriver-manager'				
 				sh 'webdriver-manager update'
 				sh 'npm test'
 			}
