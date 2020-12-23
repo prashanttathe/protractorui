@@ -3,8 +3,9 @@ pipeline {
 	stages {	    
 		stage("BUild") {
 			steps {
+				sh 'pwd'
+				sh 'chmod -R 777 ./'
 				sh 'ls -lh'
-				sh 'RUN chmod -R 777 ./'
 				sh 'npm install -g protractor'
 				sh 'npm install -g cucumber'
 				sh 'npm install protractor-beautiful-reporter'
