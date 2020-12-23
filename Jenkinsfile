@@ -4,12 +4,13 @@ pipeline{
 		stage("Build"){
 			steps {
 				sh 'pwd'
-				sh 'cd /usr/local/lib/'
-				sh 'ls -lh'
-				sh 'chown -R root /usr/local/lib /usr/local/include /usr/local/share /usr/local/bin'
-				sh 'npm install -g protractor'
-				sh 'npm install -g cucumber'
+				sh 'ls -lh'				
+				sh 'npm install'
+				sh 'npm install cucumber'
 				sh 'npm install protractor-beautiful-reporter'
+				sh 'cd node_modules/.bin/'
+				sh 'pwd'
+				sh 'ls -lh'
 				sh 'webdriver-manager update'
 				sh 'npm test'
 			}
