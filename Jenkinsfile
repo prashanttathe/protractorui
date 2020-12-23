@@ -5,8 +5,8 @@ pipeline{
 			steps {
 				sh 'pwd'
 				sh 'cd /var/lib/'
-				sh 'ln -s /var/lib/ ~/var'
-				sh 'cd ~/var'
+				sh 'ln -s /var/lib/ ~/varlib'
+				sh 'cd ~/varlib'
 				sh 'pwd'
 				sh 'ls -lh'				
 				sh 'npm install'
