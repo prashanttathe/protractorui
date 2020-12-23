@@ -29,7 +29,7 @@ export let config: Config = {
   {
     browserName: 'firefox',
 
-    chromeOptions: {
+    firefoxOptions: {
 
      // args: ["--incognito"],
       args: ["--headless","no-sandbox"],
@@ -83,7 +83,7 @@ export let config: Config = {
       metadata: {
         "App Version": "0.3.2",
         "Test Environment": "test",
-        "Browser": "Chrome  79.0.3945.88",
+        "Browser": "firefox",
         "Platform": "Windows 7",
         "Parallel": "Scenarios",
         "Executed": "Web App"
