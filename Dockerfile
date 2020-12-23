@@ -14,7 +14,7 @@ RUN apk add  --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/m
     
 #RUN \
 #add-pkg --repository http://dl-cdn.alpinelinux.org/alpine/edge/community
-RUN apk add --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing firefox
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing firefox
 	
 WORKDIR /app
 
