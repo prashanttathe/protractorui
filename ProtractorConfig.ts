@@ -27,9 +27,9 @@ export let config: Config = {
 
   capabilities:
   {
-     browserName: 'firefox',
+     browserName: 'chrome',
 
-  'moz:firefoxOptions': {
+  'chromeOptions': {
      args: [ "--headless" ]
    }
   },
