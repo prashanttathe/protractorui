@@ -3,6 +3,9 @@ pipeline{
 	stages{
 		stage("Build"){
 			steps {
+				sh 'pwd'
+				sh 'cd /usr/local/lib/'
+				sh 'ls -lh'
 				sh 'chown -R root /usr/local/lib /usr/local/include /usr/local/share /usr/local/bin'
 				sh 'npm install -g protractor'
 				sh 'npm install -g cucumber'
