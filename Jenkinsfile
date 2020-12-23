@@ -1,31 +1,15 @@
-pipeline {	
-    	agent { dockerfile true }
-	environment {
-        HOME = '.'
-    	}
-	stages {	    
-		stage("BUild") {
+pipeline{
+	agent { dockerfile true }
+	stages{
+		stage("Build"){
 			steps {
-				sh 'pwd'
-				sh 'chmod -R 777 ./'
-				sh 'ls -lh'
 				sh 'npm install -g protractor'
-				sh 'npm install cucumber'
+				sh 'npm install -g cucumber'
 				sh 'npm install protractor-beautiful-reporter'
-				sh 'webdriver-manager status'
-				sh 'npm install webdriver-manager'				
 				sh 'webdriver-manager update'
-				sh 'npm test'
+				sh 'protractor conf.js --chromeDriver="$CHROME_DRIVER" --browser=chrome --capabilities.chromeOptions.args="headless" --capabilities.chromeOptions.args="no-sandbox"'
 			}
+			
 		}
-		
-    	}
-	post { 
-		success { 
-		    echo "Your Test execution is done and reports at - /protractorui/reports/2020-12-18.html"
-		}
-		failure { 
-		    echo "Please check logs for more details."
-		}
-    	}
+	}
 }
