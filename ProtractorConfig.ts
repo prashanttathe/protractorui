@@ -27,12 +27,12 @@ export let config: Config = {
 
   capabilities:
   {
-    browserName: 'chrome',
+    browserName: 'firefox',
 
     chromeOptions: {
 
      // args: ["--incognito"],
-      args: ["--headless","--no-sandbox"],
+      args: ["--headless"],
 
       prefs: {
 
