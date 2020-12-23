@@ -12,8 +12,8 @@ RUN java --version
   #  npm                       # note this one
 RUN apk add  --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/main/ nodejs=8.9.3-r1
     
-RUN \
-    add-pkg --repository http://dl-cdn.alpinelinux.org/alpine/edge/community
+#RUN \
+ #   add-pkg --repository http://dl-cdn.alpinelinux.org/alpine/edge/community
 RUN apk update
 RUN apk add firefox-esr	
 	
