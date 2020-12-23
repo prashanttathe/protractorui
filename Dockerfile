@@ -30,19 +30,19 @@ ENV REST_PORT=$REST_PORT
 #RUN ls
 COPY package.json /app/package.json
 #Global npm dependencies
-ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
+#ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 #optionally if you want to run npm global bin without specifying path
-ENV PATH=$PATH:/home/node/.npm-global/bin
+#ENV PATH=$PATH:/home/node/.npm-global/bin
 #RUN npm install -g
 #RUN pwd
 #RUN ls
 #COPY . /app
 #RUN ls -lh
 #change permissions for webdriver-update
-WORKDIR /home
-RUN ls -l
-RUN chmod -R 777 /home/node
-WORKDIR /app
+#WORKDIR /home
+#RUN ls -l
+#RUN chmod -R 777 /home/node
+#WORKDIR /app
 #RUN java --version
 #RUN ls -l
 #RUN webdriver-manager update
