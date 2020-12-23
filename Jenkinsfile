@@ -6,9 +6,19 @@ pipeline {
 	}
     	agent { dockerfile true }
 	stages {
-		stage('Initialize') {
+	    stage('Code Checkout') {
 			steps {
-				echo 'Placeholder.'
+				sh "if [ -d ${APP_NAME} ]; then rm -rf ${APP_NAME}; fi"
+				sh "git clone https://github.com/${GIT_REPO_NAME}/${APP_NAME}.git"
+			}
+		}
+		stage("BUild") {
+			steps {
+				sh 'npm install -g protractor'
+				sh 'npm install -g cucumber'
+				sh 'npm install protractor-beautiful-reporter'
+				sh 'webdriver-manager update'
+				sh 'npm test'
 			}
 		}
 		
