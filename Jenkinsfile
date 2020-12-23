@@ -1,17 +1,6 @@
-pipeline {
-	environment {
-    		def APP_NAME = "protractorui"
-    		def GIT_REPO_NAME = "prashanttathe"
-    		def DEPLOY_ENV = "dev"
-	}
+pipeline {	
     	agent { dockerfile true }
-	stages {
-	    stage('Code Checkout') {
-			steps {
-				sh "if [ -d ${APP_NAME} ]; then rm -rf ${APP_NAME}; fi"
-				sh "git clone https://github.com/${GIT_REPO_NAME}/${APP_NAME}.git"
-			}
-		}
+	stages {	    
 		stage("BUild") {
 			steps {
 				sh 'npm install -g protractor'
