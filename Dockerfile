@@ -1,5 +1,6 @@
 # chromium > 76 is required. For now, this is only available in the 'edge' build
 FROM alpine:edge
+LABEL authors="Prashant Tathe"
 
 USER root
 
