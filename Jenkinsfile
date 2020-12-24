@@ -1,24 +1,24 @@
-pipeline{
-	agent { dockerfile true }
-	stages{
-		stage("Build"){
-			steps {
-				sh 'pwd'
-				sh 'cd /var/lib/'
-				sh 'ln -s /var/lib/ ~/varlib'
-				sh 'cd ~/varlib'
-				sh 'pwd'
-				sh 'ls -lh'				
-				sh 'npm install'
-				sh 'npm install cucumber'
-				sh 'npm install protractor-beautiful-reporter'
-				sh 'cd node_modules/.bin/'
-				sh 'pwd'
-				sh 'ls -lh'
-				sh 'webdriver-manager update'
-				sh 'npm test'
-			}
-			
-		}
+pipeline {
+	environment {
+    		def APP_NAME = "protractorui"
+    		def GIT_REPO_NAME = "prashanttathe"
+    		def DEPLOY_ENV = "dev"
 	}
+    	agent { dockerfile true }
+	stages {
+		stage('Initialize') {
+			steps {
+				echo 'Placeholder.'
+			}
+		}
+		
+    	}
+	post { 
+		success { 
+		    echo "Your Test execution is done and reports at - /protractorui/reports/2020-12-18.html"
+		}
+		failure { 
+		    echo "Please check logs for more details."
+		}
+    	}
 }
