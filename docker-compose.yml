@@ -1,0 +1,5 @@
+version: 3
+  services:
+	   php:  yourimage:latest
+		   volumes:
+			   - ./path/to/your/config:/etc/ssmtp/ssmtp.conf
