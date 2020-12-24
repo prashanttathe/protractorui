@@ -3,6 +3,11 @@ FROM alpine:edge
 
 USER root
 
+#config SSMTP
+RUN apk update
+RUN apk add ssmtp
+EXPOSE 9000
+
 RUN apk add openjdk11 
 RUN java --version
 
@@ -22,16 +27,17 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 ENV REST_HOST=$REST_HOST
 ENV REST_PORT=$REST_PORT
+#Global npm dependencies
+ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
+#optionally if you want to run npm global bin without specifying path
+ENV PATH=$PATH:/home/node/.npm-global/bin
 
 #User root
 # install and cache app dependencies
 #RUN pwd
 #RUN ls
 COPY package.json /app/package.json
-#Global npm dependencies
-ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
-#optionally if you want to run npm global bin without specifying path
-ENV PATH=$PATH:/home/node/.npm-global/bin
+
 RUN npm install -g
 #RUN pwd
 #RUN ls
