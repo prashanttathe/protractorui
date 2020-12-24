@@ -35,7 +35,7 @@ ENV PATH=$PATH:/home/node/.npm-global/bin
 #User root
 # install and cache app dependencies
 #RUN pwd
-#RUN ls
+RUN ls -lh
 COPY package.json /app/package.json
 
 RUN npm install -g
