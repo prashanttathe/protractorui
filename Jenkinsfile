@@ -11,7 +11,7 @@ pipeline {
 				echo 'Placeholder.'
 				//sh 'export dockerid=`hostname`'
 				//sh 'echo $dockerid'
-				sh 'cp `hostname`:/app/Reports/2021-01-05.html /reports'
+				sh 'cp /app/Reports/2021-01-05.html /reports'
 			}
 		}
 		
