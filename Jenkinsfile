@@ -9,6 +9,9 @@ pipeline {
 		stage('Initialize') {
 			steps {
 				echo 'Placeholder.'
+				sh 'export dockerid=docker ps -qf \"name=${APP_NAME}\" -f'
+				sh 'echo $dockerid'
+				sh 'cp $dockerid/app/Reports/2021-01-05.html /reports'
 			}
 		}
 		
