@@ -9,6 +9,7 @@ pipeline {
 		stage('Initialize') {
 			steps {
 				echo 'Placeholder.'
+				sh 'rm -f /var/lib/jenkins/workspace/FEI_PetClinic_Protractorui/`date +"%Y-%m-%d"`.html'
 				sh 'cp /app/Reports/`date +"%Y-%m-%d"`.html /var/lib/jenkins/workspace/FEI_PetClinic_Protractorui'
 				
 			}
@@ -18,6 +19,7 @@ pipeline {
 	post { 
 		success { 
 		    sh 'cp /var/lib/jenkins/workspace/FEI_PetClinic_Protractorui/`date +"%Y-%m-%d"`.html /var/www/html/'
+		    sh 'chmod 777 /var/www/html/`date +"%Y-%m-%d"`.html'
 		    sh 'echo "Your Test execution is done and reports at - http://tnt-aks-automator.eastus.cloudapp.azure.com/`date +"%Y-%m-%d"`.html"'
 		}
 		failure { 
