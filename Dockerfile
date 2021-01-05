@@ -52,7 +52,7 @@ RUN webdriver-manager update
 RUN npm test
 #WORKDIR ./Reports
 #RUN ls -lh
-#RUN cat 2020-12-24.html
+RUN cat 2020-12-24.html
 #RUN echo "Protractor report" | mail -s "Protractor Report Here" tathe.prashant@gmail.com -A 2020-12-24.html
 #RUN pwd
 #VOLUME /reports
