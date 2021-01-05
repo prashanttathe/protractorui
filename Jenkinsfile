@@ -9,8 +9,8 @@ pipeline {
 		stage('Initialize') {
 			steps {
 				echo 'Placeholder.'
-				sh 'export docker-id=docker ps -qf \"name=${APP_NAME}\" -f'
-				sh 'cp $docker-id/reports:/reports'
+				sh 'export dockerid=docker ps -qf \"name=${APP_NAME}\" -f'
+				sh 'cp $dockerid/reports:/reports'
 			}
 		}
 		
