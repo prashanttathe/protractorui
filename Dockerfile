@@ -56,5 +56,5 @@ RUN npm test
 #RUN echo "Protractor report" | mail -s "Protractor Report Here" tathe.prashant@gmail.com -A 2020-12-24.html
 #RUN pwd
 VOLUME /reports
-COPY ./Reports/2021-01-05.html /reports
+COPY /app/Reports/2021-01-05.html /reports
 # add app
