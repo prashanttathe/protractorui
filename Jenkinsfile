@@ -9,9 +9,7 @@ pipeline {
 		stage('Initialize') {
 			steps {
 				echo 'Placeholder.'
-				//sh 'export dockerid=`hostname`'
-				//sh 'echo $dockerid'
-				sh 'cp /app/Reports/2021-01-05.html /var/lib/jenkins/workspace/FEI_PetClinic_Protractorui'
+				sh 'cp /app/Reports/`date +"%y-%m-%d"`.html /var/lib/jenkins/workspace/FEI_PetClinic_Protractorui'
 				
 			}
 		}
@@ -19,7 +17,8 @@ pipeline {
     	}
 	post { 
 		success { 
-		    echo "Your Test execution is done and reports at - /protractorui/reports/2020-12-18.html"
+		    sh 'cp /var/lib/jenkins/workspace/FEI_PetClinic_Protractorui/`date +"%y-%m-%d"`.html /var/www/html/'
+		    sh 'echo "Your Test execution is done and reports at - http://tnt-aks-automator.eastus.cloudapp.azure.com/`date +"%y-%m-%d"`.html"'
 		}
 		failure { 
 		    echo "Please check logs for more details."
