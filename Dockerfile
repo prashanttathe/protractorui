@@ -50,11 +50,12 @@ RUN chmod -R 777 ./
 RUN webdriver-manager update
 #RUN chmod -R 777 /app/node_modules
 RUN npm test
-WORKDIR ./Reports
+WORKDIR ./reports
 RUN ls -lh
 #RUN cat 2020-12-24.html
-RUN echo "Protractor report" | mail -s "Protractor Report Here" tathe.prashant@gmail.com -A 2020-12-24.html
-RUN pwd
-VOLUME /reports
-
+#RUN echo "Protractor report" | mail -s "Protractor Report Here" tathe.prashant@gmail.com -A 2020-12-24.html
+#RUN pwd
+VOLUME reports
+COPY ./reports/2020-12-24.html /reports
+VOLUME 
 # add app
