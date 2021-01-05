@@ -55,7 +55,6 @@ RUN ls -lh
 #RUN cat 2020-12-24.html
 #RUN echo "Protractor report" | mail -s "Protractor Report Here" tathe.prashant@gmail.com -A 2020-12-24.html
 #RUN pwd
-VOLUME reports
+VOLUME /reports
 COPY ./reports/2020-12-24.html /reports
-VOLUME 
 # add app
