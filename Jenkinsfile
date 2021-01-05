@@ -9,9 +9,9 @@ pipeline {
 		stage('Initialize') {
 			steps {
 				echo 'Placeholder.'
-				sh 'export dockerid=`hostname`'
-				sh 'echo $dockerid'
-				sh 'cp $dockerid/app/Reports/2021-01-05.html /reports'
+				//sh 'export dockerid=`hostname`'
+				//sh 'echo $dockerid'
+				sh 'cp `hostname`/app/Reports/2021-01-05.html /reports'
 			}
 		}
 		
