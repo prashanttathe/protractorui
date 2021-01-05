@@ -18,9 +18,7 @@ pipeline {
     	}
 	post { 
 		success { 
-		    sh 'cp /var/lib/jenkins/workspace/FEI_PetClinic_Protractorui/`date +"%Y-%m-%d"`.html /var/www/html/'
-		    sh 'chmod 777 /var/www/html/`date +"%Y-%m-%d"`.html'
-		    sh 'echo "Your Test execution is done and reports at - http://tnt-aks-automator.eastus.cloudapp.azure.com/`date +"%Y-%m-%d"`.html"'
+		    sh 'echo "Your test execution is done and reports will be avaible at - http://tnt-aks-automator.eastus.cloudapp.azure.com/`date +"%Y-%m-%d"`.html" in sometime.'
 		}
 		failure { 
 		    echo "Please check logs for more details."
