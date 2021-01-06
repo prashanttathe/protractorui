@@ -10,8 +10,8 @@ pipeline {
 			steps {
 				echo 'Placeholder.'
 				//sh 'rm -f /var/lib/jenkins/workspace/FEI_PetClinic_Protractorui/`date +"%Y-%m-%d"`.html'
-				sh 'rm -f /var/lib/jenkins/workspace/${env.JOB_BASE_NAME}/`date +"%Y-%m-%d"`.html'
-				sh 'cp /app/Reports/`date +"%Y-%m-%d"`.html /var/lib/jenkins/workspace/${env.JOB_BASE_NAME}'
+				sh 'rm -f /var/lib/jenkins/workspace/${env.BUILD_TAG}/`date +"%Y-%m-%d"`.html'
+				sh 'cp /app/Reports/`date +"%Y-%m-%d"`.html /var/lib/jenkins/workspace/${env.BUILD_TAG}'
 				
 			}
 		}
